@@ -1,0 +1,48 @@
+Funções
+
+As funções são blocos de códigos programáveis que nos permitem encapsular o código e chamá-los posteriormente.
+
+Para definir uma função, é utilizado o comando def seguido do nome da função, parênteses e dois pontos. 
+Ex: def funcao():
+		print("batata")
+	funcao() #batata
+	
+Parâmetros
+As funções podem aceitar parâmetros, valores passados para a função quando ela é chamada
+def funcao(parametro)
+	print(f"Olá, {parametro}!") # o 'f' indica para a função que {parametro} se trata de uma variável e não texto
+	
+Variáveis de retorno
+As funções podem retornar valores usando o comando return, que pode ser usado pelo código que chama a função.
+Ex: def funcao(a, b):
+		return a + b
+	soma = funcao(3, 4)
+	print(soma)
+	
+Funções anônimas (Lambda)
+
+Funções sem nome, pequenas e concisas geradas em apenas uma linha.
+Ex:	exponencial = lambda x, y: x ** y
+	print(exponencial(2, 8))
+	
+Variáveis locais
+As variáveis geradas dentro de uma função só podem ser utilizadas naquele ambiente, diferente das variáveis globais,
+que podem ser utilizadas em qualquer parte do programa.
+Ex: def funcao():
+		variavel_local = 10
+		print(variavel_local)  # Acessível dentro da função
+	print(variavel_local)  # Gera um erro, a variável não está definida neste escopo.
+	
+docstrings
+É importante documentar qual a função e como é o funcionamento de uma função.
+Podemos fazer isso através dos docstrings, que permite registrar anotações entre aspas triplas ("""), 
+estas anotações, podendo ser até em múltiplas linhas.
+
+Funções com número variável de argumentos
+Antes de definir um parametro de uma função, podemos adicionar um asterisco(*) para indicar que a função pode aceitar
+multiplos parametros, sem denifir uma quantidade especifica. Os parâmetros são salvos em uma tupla.
+Ex:	def calculo_media(*valores):
+		soma = sum(valores)
+		quantidade = len(valores)
+		return media = soma/quantidade
+	print(f"A média dos valores é: calculo_media()")

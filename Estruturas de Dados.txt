@@ -1,0 +1,113 @@
+Listas 
+
+utilizadas para guardar coleções de elementos, podendo até ser elementos de diferentes tipos de dado. Ex:
+frutas = ["maçã", "banana", "laranja"]
+
+Para acessar um elemento de uma lista, é necessario utilizar o indice do elemento entre colchetes, após o nome da lista. Ex: 
+print(frutas[0])  # Imprime "maçã"
+
+Também é possível acessar utilizando indices negativos, que começaram em -1, que será o último elemento da lista. Ex:
+print(frutas[-1])  # Imprime "laranja"
+print(frutas[-3])  # Imprime "maçã"
+
+Métodos de listas
+Alguns métodos de manipulação das listas:
+
+lista.append(elemento): adiciona o elemento ao final da lista
+frutas.append("pera")
+print(frutas)  # Imprime ["maçã", "banana", "laranja", "pera"]
+
+lista.insert(indice, elemento): insere o elemento no indice especificado
+frutas.insert(1, "uva")
+print(frutas)  # Imprime ["maçã", "uva", "banana", "laranja", "pera"]
+
+lista.remove(elemento): remove a primeira ocorrencia do elemento
+frutas.remove("banana")
+print(frutas)  # Imprime ["maçã", "uva", "laranja", "pera"]
+
+lista.pop(indice): remove e retorna o valor do elemento indicado
+fruta_removida = frutas.pop(2)
+print(frutas)  # Imprime ["maçã", "uva", "pera"]
+print(fruta_removida)  # Imprime "laranja"
+
+lista.sort(): ordena os elementos em ordem crescente
+frutas.sort()
+print(frutas)  # Imprime ["maçã", "pera", "uva"]
+
+lista.reverse(): inverte a ordem dos elementos da lista
+frutas.reverse()
+print(frutas)  # Imprime ["uva", "pera", "maçã"]
+
+
+Lista de compreensão
+permite criar novas listas a partir de listas existente, permitindo filtrar e transformar os elementos.
+
+nova_lista = [expressão for elemento in sequência if condição]
+Exemplo:
+números = [1, 2, 3, 4, 5]
+quadrados = [x ** 2 for x in números if x % 2 == 0]
+print(quadrados)  # Imprime [4, 16]
+
+Tuplas
+São estruturas de dados similar as listas, porém seus elementos não podem ser modificados após sua criação.
+Úteis para armazenar dados que não devem ser apagados, como coordenadas e configurações.
+
+Listas são criadas com colchetes[]
+Tuplas são criadas com parênteses()
+Ex: ponto = (3, 4)
+
+Métodos de tuplas
+
+tupla.count(elemento): indica o número de vezes que um elemento aparece na tupla
+tupla.index(elemento): informa exclusivamente a primeira aparição do elemento indicado.
+tupla.index(elemento, start, finish): Opcionalmente, pode se expecificar o indice de começo e término da busca.
+len(tupla): retorna o comprimento da tupla. Não é uma método especifico da tupla
+
+Dicionários
+
+São estruturas de dados mutáveis e não ordenada que armazenão pares de chave-valor
+Cada elemento é uma chave e seus valor correspondente. Ex: {"nome": "João"}
+Dicionários são criados com chaves {}
+
+Para criar um dicionário, é necessário, utilizar chaves{}, separa a chave do valor com dois pontos(:)
+e separar as chaves-valores por vírgula Ex:
+
+pessoa {"nome": "Paulo", "Idade": 24, "Cidade": "São Paulo"}
+
+Para acessar os valores de um dicionário se utiliza a chave em vez de um indice.
+Ex: print (pessoa["nome"])
+Ou com o método get(). 
+Ex: dicionario.get(chave)
+
+Métodos de dicionário:
+
+dicionario.keys(): retorna todas as chaves do dicionário
+dicionario.values(): retorna todos os valores do dicionário
+dicionario.items(): retorna todos as chaves-valores do dicionário
+dicionario.update(): adiciona uma nova chave valor a partir de outro dicionário.
+Ex: dicionario.update({"profissão": "Estudante"})
+
+Conjuntos (set)
+
+são uma estrutura de dados mutáveis e não ordenadas que permitem armazenar conjuntos de dados únicos.
+Criados através das chaves {}: frutas = {"maçã", "banana", "laranja"}
+Ou por meio do comando set(): numeros = set([1, 2, 3, 4, 5])
+
+Eles suportam operações matemáticas de conjuntos 
+como a união (|), a interseção (&), a diferença (-) e a diferença simétrica (^).
+
+Ex: 
+conjunto1 = {1, 2, 3}
+conjunto2 = {3, 4, 5}
+
+uniao = conjunto1 | conjunto2 # {1, 2, 3, 4, 5}
+intersecao = conjunto1 & conjunto2 # {3}
+diferenca = conjunto1 - conjunto2 # {1, 2}
+diferenca_simetrica = conjunto1 ^ conjunto2 # {1, 2, 4, 5}
+
+Métodos de conjuntos
+
+conjunto.add(elemento): adiciona um elemento ao final do conjunto
+conjunto.remove(elemento): remove um elemento do conjunto, dando erro caso ele não exista
+conjunto.discard(elemento): remove um elemento do conjunto, não fazendo nada caso o elemento não exista
+conjunto.clear(): remove todos os elementos de um conjunto

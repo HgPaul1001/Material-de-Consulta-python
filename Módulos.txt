@@ -1,0 +1,81 @@
+Importação e Criação de Módulos
+Módulos são arquivos que contém funções, classes e váriaveis que podem ser utilizadas em outros programas
+A importação dos módulos permitem que reutilizemos código de maneira eficiente, organizada e modular
+
+Importação
+para utilizar módulos em um programa é necessário primeiro realizar sua importação.
+Podemos realizar a importação do módulo inteiro ou apenas das partes necessárias.
+Ex: import math
+	resultado = math.sqrt(25)
+	print(resultado) #5
+	Ou
+	from math import sqrt
+	resultado = sqrt(25)
+	print(resultado) #5
+	
+Exemplos de blibliotecas úteis do Python
+
+random e datetime
+
+import random
+import datetime
+
+numero_aleatorio = random.randint(1, 10)
+print(numero_aleatório)  # Imprime um número inteiro aleatório entre 1 e 10
+
+data_atual = datetime.datetime.now()
+print(data_atual)  # Imprime a data e hora atual
+
+Criação de um Módulo Personalizado
+Para criar um módulo, primeiro criamos um arquivo Python com o nome desejado, Ex: modulo_basico.py
+Depois definimos as variáveis, funções e classes desejadas
+Ex: def bemvindo(nome):
+		print(f"Bem vindo {nome}")
+		
+	def maioridade(idade):
+		if idade >= 18 :
+			print ("Maior de idade")
+		else: 
+			print ("Menor de idade")
+			
+Então, podemos importar o módulo para utilizar suas funções em outro programa
+Ex:	import modulo_de_teste as m
+	# Necessário nomear o módulo ao importá-lo, para que funcione corretamente
+
+	m.bemvindo(input("Qual o seu nome: "))
+	m.maioridade(int(input("Qual a sua idade: ")))
+
+Organização do código em módulos
+Conforme os programas crescem em tamanho e complexidade, uma boa prática é organizar o código em módulos, 
+separados por funcionalidade
+Isso resulta em um código mais legível e fácil de manter
+
+Exemplo do curso: 
+
+Por exemplo, podemos ter um módulo operacoes.py que contenha funções relacionadas com operações matemáticas, e outro módulo utilidades.py que contenha funções de uso geral.
+
+# operacoes.py
+def somar(a, b):
+    return a + b
+
+def subtrair(a, b):
+    return a - b
+
+# utilidades.py
+def imprimir_mensagem(mensagem):
+    print(mensagem)
+
+def obter_nome_usuario():
+    return input("Digite seu nome: ")
+	
+
+Depois, podemos importar e utilizar essas funções em nosso programa principal.
+
+import operacoes
+import utilidades
+
+resultado = operacoes.somar(5, 3)
+utilidades.imprimir_mensagem(f"O resultado da soma é: {resultado}")
+
+nome = utilidades.obter_nome_usuario()
+utilidades.imprimir_mensagem(f"Olá, {nome}!")

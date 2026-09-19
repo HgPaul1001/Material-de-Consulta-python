@@ -1,0 +1,17 @@
+Pacotes
+São uma maneira hierárquica de diretórios para organizar os módulos
+Permitem agrupar módulos relacionados e evitar conflito de nomes entre os módulos
+
+Criando pacotes
+Para criar um pacote, primeiro é necessário criar um diretório com o nome desejado e, nele, criar um arquivo especial
+chamado __init__.py
+Ex: pacote_de_teste\
+		__init__.py
+		modulo_empacotado1.py
+		modulo_empacotado2.py
+		
+E então podemos importar os modulos que estão dentro do pacote
+Ex: from pacote_de_teste import modulo_empacotado1, modulo_empacotado2
+
+	par(int(input("Escolha um número: ")))
+	letras_nome()

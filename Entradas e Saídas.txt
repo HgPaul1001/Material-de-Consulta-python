@@ -1,0 +1,60 @@
+Entradas e Saídas
+A entrada e saída de dados permite que apresentemos dados na tela, solicitemos dados do usuário ou lermos ou escrevermos
+dados em arquivos externos.
+
+Entrada de dados do usuário
+Para solicitar dados do usuário, podemos utilizar o comando input() que apresenta uma mensagem e aguarda
+um envio de dado por parte do usuário
+Ex: nome = input("Qual o seu nome: ")
+	idade = input("Qual a sua idade: ")
+	vegetal = input("Qual seu vegetal favorito: ")
+
+	print("Nome: " + nome)
+	print("Idade: " + idade)
+	print("Vegetal: " + vegetal)
+# Não esquecer do +
+
+A função input() retorna apenas cadeia de texto, sendo necessário conversões para trabalhar com outros
+tipos de dados após sua captura, com funções como 'int()' e 'float()'
+Ex: idade = int(input("Insira sua idade: "))
+	if idade >= 18:
+		print("Você é maior de idade.")
+	else:
+		print("Você é menor de idade.")
+		
+Saída de dados
+Podemos apresentar dados na tela através da função print()
+Podemos também utilizar a f-string (formatação de cadeias) para inserir variáveis
+diretamento dentro de uma caixa de texto.
+Ex: nome = "Paulo"
+	idade = 24
+	
+	print(f"Olá, meu nome é {nome} e tenho {idade} anos")
+	
+É necessário utilizar chaves{} para indicar as variáveis e a letra f no inicio para indicar uma f-string
+
+Leitura e escrita de arquivos
+Através do python, conseguimos realizar a leitura e escrita de dados em arquivos externos.
+É possível abrir arquivos no modo leitura("r"), escrita("w") ou anexar("a") e realizar leituras ou escritas.
+
+Leitura
+Para realizarmos uma leitura é primeiro necessário abrir o arquivo no modo leitura("r") através da função open()
+e depois a leitura em si pelos métodos read() ou readlines()
+Ex: arquivo = open("texto_leitura.txt", "r")
+	conteudo = arquivo.read()
+	print(conteudo)
+	arquivo.close()
+	
+Escrita
+Para realizarmos uma escrita de dados em um arquivo, é necessário abrir o arquivo no modo escrita("w") e a função open().
+Caso o arquivo não exista, ele será criado automaticamente. Se ele já existir, ele sera sobrescrito.
+Ex: arquivo = open("texto_leitura", "w")
+	arquivo.write("Você está lendo o arquivo de leitura com sucesso!")
+	arquivo.close()
+	
+#É importante fechar sempre os arquivos depois de utilizá-los para liberar os recursos do sistema. 
+
+Podemos também utilizar a declaração 'with' para realizar a abertura e fechamento de arquivos de maneira automática.
+Ex: with open("texto_leitura.txt", "r") as arquivo:
+		texto = arquivo.read()
+		print(texto)

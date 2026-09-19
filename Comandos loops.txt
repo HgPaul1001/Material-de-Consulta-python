@@ -1,0 +1,21 @@
+break - Para sair de loops antes do termino de sua execução completa. Ex:
+contador = 0
+
+while True:
+    print(contador)
+    contador += 1
+
+    if contador == 5:
+        break
+/////////////////////////////////
+continue - para pular as próximas intruções do loop, mas sem encerrar sua execução. Ex:
+for i in range(10):
+
+    if i % 2 == 0:
+        continue
+    print(i)
+/////////////////////////////////
+pass - utilizada para garantir a sintaxe do código mas sem, realizar operações desnecessárias.
+Úteis para reservar um bloco de código para preenchimento posterior. Ex:
+for i in range(5):
+    pass

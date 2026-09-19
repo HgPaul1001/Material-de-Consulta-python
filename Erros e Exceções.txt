@@ -1,0 +1,72 @@
+Tipos de Erro
+
+Erro de sintaxe (SyntaxError)
+Ocorre quando o código não segue as regras de sintaxe do Python, como esquecer dois pontos após uma declaração de função ou um loop.
+Ex: def minha_funcao() # Faltam os dois pontos
+		print("Olá")
+		
+Erro de tipo (TypeError)
+Ocorre quando se realiza uma operação com tipos de dados incompatíveis, como tentar somar um número e uma string.
+Ex: resultado = 5 + "10"
+
+Erro de nome (NameError)
+Ocorre quando se faz referência a uma variável ou função que não foi definida.
+Ex: print(variavel_nao_definida)
+
+Erro de índice (IndexError)
+Ocorre quando se tenta acessar um índice fora do intervalo válido de uma lista ou sequência.
+Ex: lista = [1, 2, 3]
+print(lista[3])  # O índice 3 está fora do intervalo
+
+Manejo de exceções
+É possível lidar e capturar erros de maneira controlada através dos comandos 'try', 'except' e 'finally'.
+
+try
+Dentro do bloco try colocamos o código que pode gerar uma exceção e, caso ela ocorra, a execução pula
+para o bloco except correspondente a exceção gerada.
+Ex: try:
+		# Código que pode gerar uma exceção
+		resultado = 10 / 0  # Divisão por zero
+		print(resultado)
+	except ZeroDivisionError:
+		print("Erro: Divisão por zero")
+		
+except
+Define qual é a exceção esperada e a captura caso ocorra. Pode se ter múltiplos blocos except para
+tratar de um mesmo bloco try
+Ex: try:
+		# Código que pode gerar uma exceção
+		resultado = 10 / 0  # Divisão por zero
+		print(resultado)
+	except ZeroDivisionError:
+		print("Erro: Divisão por zero")
+	except ValueError:
+		print("Erro: Valor inválido")
+		
+finally
+o finally sempre é executado, indepedente se ocorrer um erro ou não e por isso é geralmente utilizado
+para limpeza ou liberação de recursos.
+Ex: try:
+		# Código que pode gerar uma exceção
+		arquivo = open("arquivo.txt", "r")
+		# Realizar operações com o arquivo
+	except FileNotFoundError:
+		print("Erro: Arquivo não encontrado")
+	finally:
+		arquivo.close()  # Fechar o arquivo sempre, mesmo se ocorrer uma exceção
+		
+Exceções personalizadas
+É possível criar exceções especificas para o seu programa, além das incorporadas pelo python.
+
+Para isso, é necessário criar uma classe que herde da classe base Exception ou uma de suas subclasses
+
+Exemplo utilizando a própria classe Exception:
+def funcao():
+    # Código que pode gerar uma exceção personalizada
+    if condicao:
+        raise Exception("Descrição do erro")
+try:
+    funcao()
+except Exception as e:
+    print(f"Erro: {str(e)}")
+raise é utilizado para declarar um erro se a condição for verificada como verdadeira
